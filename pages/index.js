@@ -77,6 +77,7 @@ class Index extends Component {
   }
 
   handleRemove = (id) => {
+    axios.delete('http://localhost:3000/todos/'+id);
     const { todos } = this.state;
     this.setState({
       todos: todos.filter(todo => todo.id !== id)
