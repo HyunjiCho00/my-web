@@ -3,9 +3,10 @@ import css from '../styles/style.scss';
 import ToDoTemplate from '../components/ToDoTemplate';
 import Form from '../components/Form';
 import ToDoList from '../components/ToDoList';
+import axios from "axios";
 
-// DELETE http://localhost:3000/api/todos
-// json-server에 붙히기
+// DELETE http://localhost:3000/api/todos//
+// json-server에 붙히기//
 // import시 선언 동일하게//
 // component 폴더 나누기//
 // 폴더 구조 변경//
@@ -15,14 +16,22 @@ import ToDoList from '../components/ToDoList';
 
 class Index extends Component {
 
+  static async getInitialProps ({req}) {
+    const response = await axios.get('http://localhost:3000/todos/');
+    return {
+      data : response.data
+    }
+  }
+
   id = 2
 
   state = {
     input: '',
-    todos: [
-      { id: 0, text: 'Sample To Do List1', checked: true },
-      { id: 1, text: 'Sample To Do List2', checked: true }
-    ]
+//    todos: [
+//      { id: 0, text: 'Sample To Do List1', checked: true },
+//      { id: 1, text: 'Sample To Do List2', checked: true }
+//    ]
+	todos: this.props.data
   }
 
   handleChange = (e) => {
