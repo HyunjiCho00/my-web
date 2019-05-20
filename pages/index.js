@@ -41,16 +41,19 @@ class Index extends Component {
   }
 
   handleCreate = () => {
-
-    // axios.post 
     const { input, todos } = this.state;
-    this.setState({
-      input: '', 
-      todos: todos.concat({
-        id: this.id++,
-        text: input,
-        checked: false
-      })
+    axios.post('http://localhost:3000/todos/', {
+      text: input,
+      checked: false
+    })
+    .then((response) => {
+      this.setState({
+        input: '',
+        todos: todos.concat(response.data)
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
     });
   }
 
