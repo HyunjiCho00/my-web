@@ -1,0 +1,112 @@
+body{
+    Background: linear-gradient(-45deg, #7f00ff 0%, #e100ff 90%);
+    height: -webkit-fill-available;
+}
+
+.template {
+  background: transparent;
+  width: 512px;
+  box-shadow: 0 6px 9px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); /* 그림자 */ 
+  margin: 0 auto; /* 페이지 중앙 정렬 */
+  margin-top: 4rem;
+  Border-radius: 5px;
+}
+
+.title {
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 100;
+  color: white;
+  Border-radius: 5px 5px 0px 0px;
+  Letter-spacing: 1px;
+}
+
+.form-wrapper {
+  padding: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+.todo-wrapper {
+  min-height: 5rem;
+}
+
+.form {
+  display: flex;
+}
+
+.form input {
+  flex: 1; /* 버튼을 뺀 빈 공간을 모두 채워줍니다 */
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.createbutton {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 1rem;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+Text-transform: uppercase;
+}
+
+.createbutton:hover {
+  opacity: 0.5;
+}
+.todoitem {
+  padding: 2rem;
+  display: flex;
+  align-items: center; /* 세로 가운데 정렬 */
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+  color: #fff;
+}
+
+.todoitem:hover {
+  background: rgba(255, 255, 255, .2);
+}
+
+/* todo-item 에 마우스가 있을때만 .remove 보이기 */
+.todoitem:hover .remove {
+  opacity: 1;
+}
+
+.remove {
+  margin-left: 1rem;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.todo-text {
+  flex: 1; /* 체크, 엑스를 제외한 공간 다 채우기 */
+  word-break: break-all;
+  color: #fff;
+}
+
+.right{
+  Float: right;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: #fff;
+}
+
+.check-mark {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  margin-right: 1rem;
+  color: #fff;
+  font-weight: 800;
+}
